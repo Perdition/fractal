@@ -95,11 +95,11 @@ class Manager
      */
     public function getIncludeParams($include)
     {
-        if (! isset($this->includeParams[$include])) {
-            return;
+        $params = [];
+        
+        if (isset($this->includeParams[$include])) {
+            $params = $this->includeParams[$include];
         }
-
-        $params = $this->includeParams[$include];
 
         return new ParamBag($params);
     }
